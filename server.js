@@ -3,7 +3,7 @@ const env = require('dotenv').config()
 
 const app = express()
 
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   res.send('Hello World')
 })
 
