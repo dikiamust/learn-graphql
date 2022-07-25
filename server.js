@@ -9,6 +9,14 @@ app.get('/', (req, res) => {
 
 const port = process.env.PORT || 3300
 
-app.listen(port, () => {
-    console.log(`server running on http://localhost:${port}`);
-})
+
+const appStart = () => {
+  try {
+    app.listen(port, () => console.log(`server running on http://localhost:${port}`))
+  } catch (error) {
+    console.log('ERROR: ', error)
+  }
+}
+
+appStart()
+
