@@ -1,7 +1,7 @@
 const graphql = require('graphql');
 const { GraphQLObjectType, GraphQLSchema, GraphQLInt, GraphQLString, GraphQLList } = require('graphql');
 const UserType = require('./TypeDefs/UserType')
-const userData = require('../MOCK_DATA.json');
+const userData = require('../../MOCK_DATA.json');
 
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
