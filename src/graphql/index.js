@@ -2,6 +2,7 @@ const graphql = require('graphql');
 const { GraphQLObjectType, GraphQLSchema, GraphQLInt, GraphQLString, GraphQLList } = require('graphql');
 const UserType = require('./TypeDefs/UserType')
 const userData = require('../../MOCK_DATA.json');
+const db = require('../db/knex')
 
 const RootQuery = new GraphQLObjectType({
     name: 'RootQueryType',
@@ -13,7 +14,14 @@ const RootQuery = new GraphQLObjectType({
           return userData;
         }
       },
-      // getUserById
+      getAllPosts: {
+        // type: new GraphQLList(UserType),
+        // args: { id: { type: GraphQLInt} },
+        resolve(parent, args){
+          return db('posts')
+        }
+        
+      },
     }
 })
   

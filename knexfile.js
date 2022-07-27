@@ -1,7 +1,5 @@
 const env = require('dotenv').config()
 
-
-
 // Update with your config settings.
 
 /**
